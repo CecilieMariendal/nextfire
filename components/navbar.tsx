@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import {ImUser} from 'react-icons/im'
+
 
 export default function Navbar({}) {
-    const user = true;
+    const user = null;
     const username = true;
 
     return (
@@ -23,7 +25,15 @@ export default function Navbar({}) {
                 </li>
                 <li>
                     <Link href={`/${username}`}>
-                        <img src={user?.portait} alt="My user portait"/>
+                        <>
+                            {user?.portait ! && (
+                                <img src={user?.portait} alt="My user portait"/>
+                            )}
+                            
+                            {! user?.portait && (
+                                <ImUser />
+                            )}
+                        </>
                     </Link>
                 </li>
                 </>

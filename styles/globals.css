@@ -293,8 +293,8 @@ button.btn-logo::after {
   bottom: 4px;
   right: -4px;
   z-index: -1;
-  background-color: var(--color-green);
-  opacity: 0.75;
+  background-color: var(--color-blue);
+  opacity: 0.40;
 }
 
 /* Cards */
