@@ -27,13 +27,13 @@ export default function Navbar({}) {
                 <li>
                     <Link href={`/${username}`}>
                         <>
-                            {user.portrait && (
-                                <img src={user.portrait} alt="My user portait"/>
-                            )}
-                            
-                            {! user.portrait && (
-                                <ImUser />
-                            )}
+                        {user.portrait && (
+                            <img src={user.portrait} alt="My user portait"/>
+                        )}
+                        
+                        {! user.portrait && (
+                            <ImUser />
+                        )}
                         </>
                     </Link>
                 </li>
@@ -43,7 +43,7 @@ export default function Navbar({}) {
             {/* user is not signed OR has not created username */}
             {! username && (
                 <li>
-                    <Link href="/intro">
+                    <Link href="/enter">
                         <button className="btn-blue">Sign in</button>
                     </Link>
                 </li>

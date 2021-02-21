@@ -4,9 +4,17 @@
   --color-bg: #eef0f1;
   --color-text: #08090a;
   --color-blue: #3b49df;
+  --color-blue-hover: #505CE2;
+  --color-blue-active: #1F2DC1;
   --color-red: #df3b3b;
+  --color-red-hover: #E25050;
+  --color-red-active: #D32222;
   --color-green: #3bdf72;
+  --color-green-hover: #50E281;
+  --color-green-active: #22D35D;
   --color-gray: #b5bdc4;
+  --color-gray-hover: #C6CCD2;
+  --color-gray-active: #A4AEB6;
 }
 
 html,
@@ -197,12 +205,22 @@ div.loader span.circle:nth-child(4) {
   margin-left: 1rem;
 }
 
+.navbar ul li svg,
 .navbar ul li img {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
   font-size: 0.75rem;
+}
+
+.navbar ul li svg {
+  border: 1px solid black;
+}
+
+.navbar ul li svg path {
+  transform: scale(1.1) translateY(1px);
+  transform-origin: center;
 }
 
 /* Buttons */
@@ -222,7 +240,21 @@ div.loader span.circle:nth-child(4) {
   border-radius: 24px;
   cursor: pointer;
   margin: 0.25rem 0;
+  transition: background-color 0.2s;
 }
+
+.btn:focus, button:focus {
+  outline: none;
+}
+
+button.btn-blue:hover {
+  background-color: var(--color-grey-hover);
+}
+
+button.btn-blue:active {
+  background-color: var(--color-grey-active);
+}
+
 
 @media only screen and (max-width: 768px) {
   button {
@@ -243,14 +275,38 @@ button.btn-blue {
   color: white;
 }
 
+button.btn-blue:hover {
+  background-color: var(--color-blue-hover);
+}
+
+button.btn-blue:active {
+  background-color: var(--color-blue-active);
+}
+
 button.btn-red {
   background-color: var(--color-red);
   color: white;
 }
 
+button.btn-red:hover {
+  background-color: var(--color-red-hover);
+}
+
+button.btn-red:active {
+  background-color: var(--color-red-active);
+}
+
 button.btn-green {
   background-color: var(--color-green);
   color: white;
+}
+
+button.btn-green:hover {
+  background-color: var(--color-green-hover);
+}
+
+button.btn-green:active {
+  background-color: var(--color-green-active);
 }
 
 button.btn-google {
@@ -268,7 +324,7 @@ button.btn-logo {
   background-color: var(--color-text);
   color: white;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding: 0.5rem 1rem;
   border-radius: 0;
 }
@@ -337,6 +393,7 @@ input[type="file"] {
     padding: 5px;
     margin: 5px 0;
 }
+
 /* Utilities */
 
 .text-sm {
