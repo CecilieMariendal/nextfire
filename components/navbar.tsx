@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import { useContext } from 'react';
 import {ImUser} from 'react-icons/im'
+import { UserContext } from './context';
 
 
 export default function Navbar({}) {
-    const user = null;
-    const username = true;
-
+    const {user, username} = useContext(UserContext);
+    
     return (
       <nav className="navbar">
         <ul>
@@ -16,7 +17,7 @@ export default function Navbar({}) {
             </li>
 
             {/* user is signed-in and has username */}
-            {username && (
+            {username && user && (
                 <>
                 <li>
                     <Link href="/admin">
@@ -26,11 +27,11 @@ export default function Navbar({}) {
                 <li>
                     <Link href={`/${username}`}>
                         <>
-                            {user?.portait ! && (
-                                <img src={user?.portait} alt="My user portait"/>
+                            {user.portrait && (
+                                <img src={user.portrait} alt="My user portait"/>
                             )}
                             
-                            {! user?.portait && (
+                            {! user.portrait && (
                                 <ImUser />
                             )}
                         </>
@@ -40,9 +41,9 @@ export default function Navbar({}) {
             )}
 
             {/* user is not signed OR has not created username */}
-            {username === null && (
+            {! username && (
                 <li>
-                    <Link href="/enter">
+                    <Link href="/intro">
                         <button className="btn-blue">Sign in</button>
                     </Link>
                 </li>
