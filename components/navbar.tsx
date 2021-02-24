@@ -26,15 +26,7 @@ export default function Navbar({}) {
                 </li>
                 <li>
                     <Link href={`/${username}`}>
-                        <>
-                        {user.portrait && (
-                            <img src={user.portrait} alt="My user portait"/>
-                        )}
-                        
-                        {! user.portrait && (
-                            <ImUser />
-                        )}
-                        </>
+                        <img src={user.portrait || '/placeholder.jpg'} alt="My user portait"/>
                     </Link>
                 </li>
                 </>
