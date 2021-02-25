@@ -13,7 +13,6 @@ export async function getServerSideProps({ query }) {
 
   if (userDoc) {
     user = userDoc.data();
-    console.log(user);
     
     const postsQuery = userDoc.ref
       .collection('posts')

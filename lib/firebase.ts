@@ -23,6 +23,8 @@ export const firestore = firebase.firestore();
 export const storage = firebase.storage();
 
 
+export const fromMillisecounds = firebase.firestore.Timestamp.fromMillis;
+
 /**`
  * Gets a users/{uid} document with username
  * @param  {string} username
