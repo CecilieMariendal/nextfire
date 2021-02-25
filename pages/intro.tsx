@@ -59,10 +59,7 @@ function UsernameForm() {
       batch.set(userDoc, {username: formValue, photoUrl: null, displayName: null});
 
       await batch.commit();
-
-      console.log('batch finished');
     } catch(error) {
-      console.log(error);
     }
     
   };
@@ -96,7 +93,7 @@ function UsernameForm() {
       if (username.length >= 3) {
         const ref = firestore.doc(`usernames/${username}`);
         const {exists} = await ref.get();
-        console.log('Firestore read executed!');
+
         setIsValid(! exists);
         setLoading(false);
       }

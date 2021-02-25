@@ -30,13 +30,9 @@ export const fromMillisecounds = firebase.firestore.Timestamp.fromMillis;
  * @param  {string} username
  */
 export async function getUserWithUsername(username: string) {
-    console.log(username);
-    
     const usersRef = firestore.collection('users');
     const query = usersRef.where('username', '==', username).limit(1);
     const userDoc = (await query.get()).docs[0];
-    
-    console.log(userDoc.data());
     
     return userDoc;
 }
@@ -49,7 +45,6 @@ export async function getUserWithUsername(username: string) {
 export function postToJson(doc) {
     const data = doc.data();
     return {
-
         ...data,
 
         // Firestore timestamp NOT serializable to JSON. Must convert to milliseconds
