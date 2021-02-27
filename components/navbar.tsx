@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useContext } from 'react';
 import {ImUser} from 'react-icons/im'
-import { UserContext } from './context';
+import { UserContext } from './Context';
 
 
 export default function Navbar({}) {
