@@ -1,5 +1,5 @@
 import { Toaster } from 'react-hot-toast'
-import { UserContext } from '../components/context'
+import { UserContext } from '../lib/context'
 import Navbar from '../components/Navbar'
 import { useUserData } from '../lib/hooks'
 import '../styles/globals.css'
