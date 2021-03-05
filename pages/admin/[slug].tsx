@@ -2,16 +2,14 @@ import styles from '../../styles/Admin.module.css';
 import AuthCheck from '../../components/AuthCheck';
 import ImageUploader from '../../components/ImageUploader';
 import { firestore, auth, serverTimestamp } from '../../lib/firebase';
-
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-
 import { useDocumentDataOnce } from 'react-firebase-hooks/firestore';
 import { useForm } from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
-import { type } from 'os';
+import { PostType } from '../../@types/post';
 
 
 export default function AdminPostPage({}) {
@@ -26,7 +24,7 @@ function PostManager() {
   const [preview, setPreview] = useState(false);
 
   const router = useRouter()
-  const { slug } = router.query;
+  const {slug} = router.query;
 
   const querySlug = (typeof slug === 'string') ? slug : slug[0];
 
