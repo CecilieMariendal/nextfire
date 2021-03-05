@@ -31,7 +31,7 @@ function PostManager() {
   const querySlug = (typeof slug === 'string') ? slug : slug[0];
 
   const postRef = firestore.collection('users').doc(auth.currentUser.uid).collection('posts').doc(querySlug);
-  const [post] = useDocumentDataOnce(postRef);
+  const [post] = useDocumentDataOnce<PostType>(postRef);
   
   
   return (
