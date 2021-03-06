@@ -1,9 +1,8 @@
-import { createContext } from "react";
+import {createContext} from "react";
+import {UserType} from '../@types/user.type'
 
 type UserContextType = {
-    user: null|{
-        portrait?: string,
-    },
+    user: null|UserType,
     username: null|string,
 }
 

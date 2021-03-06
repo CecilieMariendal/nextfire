@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
-import { PostType } from '../../@types/post';
+import { PostType } from '../../@types/post.type';
 
 
 export default function AdminPostPage({}) {
