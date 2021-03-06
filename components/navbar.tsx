@@ -1,47 +1,66 @@
 import Link from 'next/link';
-import { useContext } from 'react';
-import {ImUser} from 'react-icons/im'
+import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../lib/context';
 
 
-export default function Navbar({}) {
+export default function Navbar() {
     const {user, username} = useContext(UserContext);
+    const [isAtTop, setIsAtTop] = useState(true);
+    
+    useEffect(() => {
+        const navbarHeight = document.querySelector('nav.navbar').clientHeight;
+        const handleScroll = () => {
+            setIsAtTop(document.documentElement.scrollTop < navbarHeight);
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    });
+
     
     return (
-      <nav className="navbar">
+        
+      <nav className={'navbar ' + (isAtTop ? '' : 'fixed')}>
         <ul>
-            <li>
+            <li className="logo">
                 <Link href="/">
-                    <button className="btn-logo">Feed</button>
+                  Feed
                 </Link>
             </li>
 
-            {/* user is signed-in and has username */}
             {username && user && (
                 <>
-                <li>
+                <li className="link">
                     <Link href="/admin">
-                        <button className="btn-blue">Write a Post</button>
+                        Write a Post
                     </Link>
                 </li>
                 <li>
                     <Link href={`/${username}`}>
+                        <>
                         <img src={user.portrait || '/placeholder.jpg'} alt="My user portait"/>
+                        <div>
+                            <span>{user.displayName}</span>
+                            <span className="username">@{username}</span>
+                        </div>
+                        </>
                     </Link>
                 </li>
                 </>
             )}
 
-            {/* user is not signed OR has not created username */}
             {! username && (
-                <li>
+                <li className="link">
                     <Link href="/intro">
-                        <button className="btn-blue">Sign in</button>
+                        Sign in
                     </Link>
                 </li>
             )}
         </ul>
       </nav>
-    )
+    );
 }
   

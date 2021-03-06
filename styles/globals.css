@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --color-bg: #eef0f1;
+  --color-bg: white;
   --color-text: #08090a;
+  --color-text-light: #4e4e4e;
   --color-blue: #3b49df;
   --color-blue-hover: #505CE2;
   --color-blue-active: #1F2DC1;
@@ -15,7 +16,13 @@
   --color-gray: #b5bdc4;
   --color-gray-hover: #C6CCD2;
   --color-gray-active: #A4AEB6;
+
+  --mq-small: 500;
+  --mq-medium: 800;
+  --mq-large: 1000;
 }
+
+@import './navbar.css';
 
 html,
 body {
@@ -172,57 +179,6 @@ div.loader span.circle:nth-child(4) {
   }
 }
 
-/* Navbar */
-
-.navbar {
-  height: 70px;
-  width: 100%;
-  background: white;
-  color: var(--colors-text);
-  position: fixed;
-  top: 0;
-  padding: 0 10vw;
-  font-weight: bold;
-  border-bottom: 1px solid var(--color-gray);
-  z-index: 99;
-}
-
-.navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
-
-.navbar li:first-of-type {
-  margin-right: auto;
-}
-
-.navbar li:not(:first-of-type) {
-  margin-left: 1rem;
-}
-
-.navbar ul li svg,
-.navbar ul li img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  font-size: 0.75rem;
-}
-
-.navbar ul li svg {
-  border: 1px solid black;
-}
-
-.navbar ul li svg path {
-  transform: scale(1.1) translateY(1px);
-  transform-origin: center;
-}
-
 /* Buttons */
 
 .btn, button {
@@ -317,40 +273,6 @@ button.btn-google {
 .btn-google img {
   width: 30px;
   margin-right: 10px;
-}
-
-button.btn-logo {
-  position: relative;
-  background-color: var(--color-text);
-  color: white;
-  text-transform: uppercase;
-  font-size: 1.25rem;
-  padding: 0.5rem 1rem;
-  border-radius: 0;
-}
-
-button.btn-logo::before {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: -4px;
-  bottom: -4px;
-  right: 4px;
-  z-index: -1;
-  background-color: var(--color-blue);
-  opacity: 0.75;
-}
-
-button.btn-logo::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: 4px;
-  bottom: 4px;
-  right: -4px;
-  z-index: -1;
-  background-color: var(--color-blue);
-  opacity: 0.40;
 }
 
 /* Cards */

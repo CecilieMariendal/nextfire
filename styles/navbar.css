@@ -1,0 +1,121 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 100%;
+    height: 70px;
+    padding: 0 5vw;
+    color: var(--colors-text);
+    background-color: var(--color-bg);
+    font-weight: bold;
+    font-size: 0.75em;
+    transition: height 0.2s, box-shadow 0.2s;
+}
+  
+.navbar.fixed {
+    height: 52px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+  
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+  
+.navbar li:first-of-type {
+    margin-right: auto;
+}
+  
+.navbar li:not(:first-of-type) {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
+/* .navbar li.link { */
+    /* border: 1px solid var(--color-text); */
+/* } */
+
+.navbar ul li img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+  
+.navbar ul li div {
+    display: none;
+    flex-direction: column;
+    margin-left: 6px;
+  
+}
+  
+.navbar ul li div span.username {
+    font-weight: normal;
+    font-style: italic;
+    color: var(--color-text-light);
+  
+}
+  
+@media screen and (min-width: 30em) {
+    .navbar ul li div {
+        display: flex;
+    }
+}
+  
+.navbar ul li.logo {
+    position: relative;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    padding: 0.35rem 1rem;
+    transition: padding 0.2s, font-size 0.2s;
+}
+  
+.navbar.navbar.fixed ul li.logo {
+    font-size: 1rem;
+    padding: 0.25rem 1rem;
+}
+
+.navbar ul li.logo::before,
+.navbar ul li.logo::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: var(--color-blue);
+    transition: top 0.2s, bottom 0.2s;
+}
+  
+.navbar ul li.logo::before {
+    top: 4px;
+    left: -4px;
+    bottom: -4px;
+    right: 4px;
+    opacity: 0.75;
+}
+  
+.navbar.fixed ul li.logo::before {
+    top: -4px;
+    bottom: 4px;
+}
+  
+.navbar ul li.logo::after {
+    top: -4px;
+    left: 4px;
+    bottom: 4px;
+    right: -4px;
+    opacity: 0.40;
+}
+  
+.navbar.fixed ul li.logo::after {
+    top: 4px;
+    bottom: -4px;
+}
