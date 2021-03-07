@@ -3,7 +3,7 @@ import { UserContext } from '../lib/context';
 import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { useUserData } from '../lib/hooks';
 import debounce from 'lodash.debounce';
-import toast from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 
 
@@ -49,6 +49,8 @@ function UsernameForm() {
     event.preventDefault();
 
     try {
+      console.log(user.uid, formValue);
+      
       // Ref both documents
       const userDoc = firestore.doc(`users/${user.uid}`);
       const usernameDoc = firestore.doc(`usernames/${formValue}`);
@@ -56,10 +58,13 @@ function UsernameForm() {
       // Commit as batch write
       const batch = firestore.batch();
       batch.set(usernameDoc, {uId: user.uid});
-      batch.set(userDoc, {username: formValue, photoUrl: null, displayName: null});
+      batch.set(userDoc, {username: formValue, portrait: null, displayName: null});
 
       await batch.commit();
     } catch(error) {
+      console.log(error);
+      
+      toast.error('something failed');
     }
     
   };
@@ -108,18 +113,12 @@ function UsernameForm() {
         <h3>Choose Username</h3>
         <form onSubmit={onSubmit}>
           <input type="text" name="username" placeholder="My username" value={formValue} onChange={onChange}/>
+          
           <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
+
           <button type="submit" className="btn-green" disabled={! isValid}>
             Choose
           </button>
-
-          <div>
-              Username: {formValue}
-              <br />
-              Loading: {loading.toString()}
-              <br />
-              Username Valid: {isValid.toString()}
-            </div>
         </form>
       </section>
     )

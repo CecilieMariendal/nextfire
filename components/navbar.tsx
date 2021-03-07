@@ -27,7 +27,7 @@ export default function Navbar() {
         <ul>
             <li className="logo">
                 <Link href="/">
-                  Feed
+                  HOME
                 </Link>
             </li>
 
