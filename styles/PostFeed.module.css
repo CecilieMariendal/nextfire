@@ -1,6 +1,6 @@
 .card {
   display: block;
-  margin: 1rem;
+  margin: 1rem 0;
   flex-basis: 45%;
   padding: 1.5rem;
   text-align: left;
@@ -15,24 +15,18 @@
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card p {
-  margin: 0 0 0.75rem 0;
-  font-size: 0.75rem;
+  color: var(--color-main);
+  border-color: var(--color-main);
 }
 
 .card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
 }
 
 .card footer {
   display: flex;
   justify-content: space-between;
-  font-size: 0.75rem;
 }
 
 .logo {

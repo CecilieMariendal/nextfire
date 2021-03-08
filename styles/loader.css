@@ -10,7 +10,7 @@ div.loader span.circle {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid var(--color-blue);
+    border: 2px solid var(--color-main);
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -32,7 +32,7 @@ div.loader span.circle:nth-child(3) {
 }
 
 div.loader span.circle:nth-child(4) {
-    background: var(--color-blue);
+    background: var(--color-main);
     top: 0;
     animation: spinner-circle-mover 1s infinite ease-in;
 }

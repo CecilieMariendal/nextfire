@@ -4,14 +4,14 @@
   --color-bg: white;
   --color-text: #08090a;
   --color-text-light: #4e4e4e;
-  --color-blue: #3b49df;
-  --color-blue-hover: #505CE2;
-  --color-blue-active: #1F2DC1;
+  --color-main: #5AA469;
+  --color-main-hover: #505CE2;
+  --color-main-active: #1F2DC1;
   --color-red: #df3b3b;
   --color-red-hover: #E25050;
   --color-red-active: #D32222;
-  --color-green: #3bdf72;
-  --color-green-hover: #50E281;
+  --color-green: #00c273;
+  --color-green-hover: #00c273;
   --color-green-active: #22D35D;
   --color-gray: #b5bdc4;
   --color-gray-hover: #C6CCD2;
@@ -102,7 +102,7 @@ input[type="file"] {
 
 .text-info {
   font-weight: bold;
-  color: var(--color-blue);
+  color: var(--color-main);
 }
 
 .box {
@@ -125,6 +125,23 @@ input[type="file"] {
   font-weight: normal;
   font-style: italic;
   color: var(--color-text-light);
+}
+
+.card {
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  background-color: white;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
+}
+
+.card.card-info {
+  color: white;
+  background-color: var(--color-main);
+}
+
+.card a {
+  text-decoration: underline
 }
 
 

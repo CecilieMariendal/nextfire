@@ -8,7 +8,6 @@
     color: var(--colors-text);
     background-color: var(--color-bg);
     font-weight: bold;
-    font-size: 0.75em;
     transition: height 0.2s, box-shadow 0.2s;
 }
   
@@ -75,13 +74,13 @@
     background-color: var(--color-bg);
     color: var(--color-text);
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     padding: 0.35rem 1rem;
     transition: padding 0.2s, font-size 0.2s;
 }
 
 .navbar.fixed ul li.logo a {
-    font-size: 1rem;
+    font-size: 1.25rem;
     padding: 0.25rem 1rem;
 }
 
@@ -90,7 +89,7 @@
     content: '';
     position: absolute;
     z-index: -1;
-    background-color: var(--color-blue);
+    background-color: var(--color-main);
     transition: top 0.2s, bottom 0.2s;
 }
   
