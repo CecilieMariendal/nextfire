@@ -56,6 +56,16 @@ export default function Home(props) {
   return (
     <main>
       <MetaTags title="Home Page" description="Get the latest posts on our site" />
+      
+      <div className="card card-info">
+        <h2>💡 Nice Going</h2>
+        
+        <p>Welcome to my little learning project! The app i build with <a href="https://nextjs.org/">Next.js</a>, <a href="https://reactjs.org/">React</a> and <a href="https://firebase.google.com/">Firebase</a>.</p>
+        <p>
+          Feel free to signup with google and try out the app. When you are signed in you can 📮 create posts and 💗 like content.
+          Special thanks to <a href="https://fireship.io/">Fireship.io</a> for getting me started.
+        </p>
+      </div>
 
       <PostFeed posts={posts}/>
 

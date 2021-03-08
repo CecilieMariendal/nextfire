@@ -17,12 +17,10 @@ function PostItem({ post, admin = false }: { post: PostType, admin: boolean }) {
     return (
         <Link href={`/${post.username}/${post.slug}`}>
             <a className={styles.card}>
-                <p>By @{post.username}</p>
                 <h2>{post.title}</h2>
-
                 <footer>
-                    <span>{wordCount} words. {minutesToRead} min read</span>
-                    <span className="hearts">💗 {post.heartCount || 0} Hearts</span>
+                    <span>{minutesToRead} minutes read</span>
+                    <span className="hearts">💗 {post.heartCount || 0} Likes</span>
                 </footer>
 
                 {/* If admin view, show extra controls for user */}
