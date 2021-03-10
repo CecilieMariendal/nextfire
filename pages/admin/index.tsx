@@ -77,15 +77,14 @@ function CreateNewPost() {
 
   return (
     <form onSubmit={createPost}>
+      <h2>Create a new post</h2>
       <input 
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="My Awesome title"
         className={styles.input}
       />
-      <p>
-        <strong>Slug:</strong> {slug}
-      </p>
+      <p>Slug: {slug}</p>
       <button type="submit" disabled={!isValid} className="btn-green">
         Create New Post
       </button>

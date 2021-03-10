@@ -36,15 +36,6 @@
   font-size: 1.25rem;
 }
 
-.input {
-  outline: none;
-  border: none;
-  font-size: 1.5rem;
-  width: 100%;
-  max-width: 400px;
-  padding: 5px 10px;
-}
-
 .checkbox {
   display: inline;
   width: auto;

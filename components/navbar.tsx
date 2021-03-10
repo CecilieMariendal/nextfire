@@ -18,9 +18,8 @@ export default function Navbar() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         }
-    });
+    });    
 
-    
     return (
         
       <nav className={'navbar ' + (isAtTop ? '' : 'fixed')}>
@@ -40,13 +39,13 @@ export default function Navbar() {
                 </li>
                 <li>
                     <Link href={`/${username}`}>
-                        <>
-                        <img src={user.portrait || '/placeholder.jpg'} alt="My user portait"/>
-                        <div>
-                            <span>{user.displayName}</span>
-                            <span className="username">@{username}</span>
-                        </div>
-                        </>
+                        <a>
+                            <img src={user.portrait || '/placeholder.jpg'} alt="My user portait"/>
+                            <div>
+                                <span>{user.displayName}</span>
+                                <span className="username">@{username}</span>
+                            </div>
+                        </a>
                     </Link>
                 </li>
                 </>

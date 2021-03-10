@@ -30,16 +30,16 @@
 .navbar li:first-of-type {
     margin-right: auto;
 }
-  
-.navbar li:not(:first-of-type) {
-    display: flex;
-    align-items: center;
-    margin-left: 1.5rem;
-}
 
 .navbar li.link {
     border: 2px solid var(--color-text);
     border-radius: 4px;
+}
+
+.navbar li:not(:first-of-type) a {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
 }
 
 .navbar li a {

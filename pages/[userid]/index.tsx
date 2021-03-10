@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import PostFeed from "../../components/PostFeed";
 import UserProfile from "../../components/UserProfile";
+import { UserContext } from "../../lib/context";
 import { getUserWithUsername, postToJson } from "../../lib/firebase";
 
 
@@ -26,7 +28,7 @@ export async function getServerSideProps({ query }) {
   posts = (await postsQuery.get()).docs.map(postToJson);
 
   return {
-    props: { user, posts }, // will be passed to the page component as props
+    props: {user, posts}, // will be passed to the page component as props
   };
 }
 

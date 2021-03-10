@@ -5,6 +5,7 @@ button {
     text-align: center;
     justify-content: center;
     margin: 0.25rem 0;
+    padding: 0.35rem 1rem;
     border: 2px solid var(--color-text);
     border-radius: 4px;
     background-color: var(--color-bg);
@@ -15,20 +16,6 @@ button {
     text-decoration: none;
     transition: background-color 0.2s;
 }
-
-.btn:focus,
-button:focus {
-    outline: none;
-}
-
-button.btn-blue:hover {
-    background-color: var(--color-grey-hover);
-}
-
-button.btn-blue:active {
-    background-color: var(--color-grey-active);
-}
-
 
 @media only screen and (max-width: 768px) {
     button {

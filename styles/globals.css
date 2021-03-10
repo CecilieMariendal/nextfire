@@ -4,18 +4,9 @@
   --color-bg: white;
   --color-text: #08090a;
   --color-text-light: #4e4e4e;
-  --color-main: #5AA469;
-  --color-main-hover: #505CE2;
-  --color-main-active: #1F2DC1;
-  --color-red: #df3b3b;
-  --color-red-hover: #E25050;
-  --color-red-active: #D32222;
-  --color-green: #00c273;
-  --color-green-hover: #00c273;
-  --color-green-active: #22D35D;
-  --color-gray: #b5bdc4;
-  --color-gray-hover: #C6CCD2;
-  --color-gray-active: #A4AEB6;
+  --color-main: #5aa469;
+  --color-cloud-normal: #f4f1f2;
+  --color-gray: #908e8e;
 
   --mq-small: 500;
   --mq-medium: 800;
@@ -55,9 +46,11 @@ input {
   display: inline-block;
   outline: none;
   border: none;
-  font-size: 1.5rem;
+  background-color: var(--color-cloud-normal);
   width: 100%;
-  padding: 5px 10px;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 fieldset {
