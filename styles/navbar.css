@@ -36,7 +36,7 @@
     border-radius: 4px;
 }
 
-.navbar li:not(:first-of-type) a {
+.navbar li.profile a {
     display: flex;
     align-items: center;
     margin-left: 1.5rem;

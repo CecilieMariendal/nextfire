@@ -37,7 +37,7 @@ export default function Navbar() {
                         Write a Post
                     </Link>
                 </li>
-                <li>
+                <li className="profile">
                     <Link href={`/${username}`}>
                         <a>
                             <img src={user.portrait || '/placeholder.jpg'} alt="My user portait"/>
