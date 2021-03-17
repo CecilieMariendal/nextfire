@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import PostFeed from "../../components/PostFeed";
+import SignOutButton from '../../components/SignOutButton';
 import UserProfile from "../../components/UserProfile";
-import { UserContext } from "../../lib/context";
 import { getUserWithUsername, postToJson } from "../../lib/firebase";
 
 
@@ -34,6 +33,7 @@ export async function getServerSideProps({ query }) {
 
 
 export default function UserProfilePage({user, posts}) {
+  
   return (
     <main>
       <UserProfile user={user}/>

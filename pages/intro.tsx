@@ -3,7 +3,8 @@ import { UserContext } from '../lib/context';
 import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { useUserData } from '../lib/hooks';
 import debounce from 'lodash.debounce';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
+import SignOutButton from '../components/SignOutButton';
 
 
 
@@ -31,10 +32,6 @@ function SignInButton() {
       <img src={'/google.png'} alt="Google logo"/>Sign in with Google
     </button>
   )
-}
-
-function SignOutButton() {
-  return <button onClick={() => auth.signOut()}>Sign Out</button>
 }
 
 
